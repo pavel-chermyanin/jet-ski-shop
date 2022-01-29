@@ -22,51 +22,122 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0;
+  margin: 0;
 }
 body {
-    color: #2F3035;
+  font-family: "SFProDisplay-Regular";
+  color: #2f3035;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 400;
 }
-.container{
-    max-width: 1200px;
-    padding: 0 15px;
-    margin: 0 auto;
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
 }
-.header {
+
+:root {
+  --accent-color: #1c62cd;
 }
-.header__top {
-}
+
+/* ==== header ==== */
+
 .header__top-inner {
-}
-.menu {
-}
-.menu__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 122px;
+  font-family: "SFProDisplay-Bold", sans-serif;
+  font-weight: 700;
 }
 .menu__item {
+  display: inline-block;
 }
-.menu__link {
-}
-.logo {
-}
-.logo__img {
+.menu__item + .menu__item {
+  padding-left: 50px;
 }
 .header__box {
+  display: flex;
 }
 .header__adress {
+  margin-right: 60px;
+  width: 265px;
+  padding-left: 30px;
+  position: relative;
+}
+.header__adress::before {
+  content: "";
+  position: absolute;
+  background-image: url(../images/adress-icon.svg);
+  width: 30px;
+  height: 30px;
+  left: 0;
+  top: -10px;
 }
 .user-list {
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
 }
 .user-list__item {
+  padding-right: 10px;
 }
-.user-list__link {
+.cart {
+  position: relative;
 }
-.header__bootom {
+.cart__num {
+  position: absolute;
+  font-size: 10px;
+  line-height: 20px;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  font-weight: 500;
+  font-family: "SFProDisplay-Medium";
+  text-align: center;
+  bottom: -2px;
+  right: -14px;
 }
-.header__bottom-inner {
+.header__bootom{
+    margin-bottom: 78px;
 }
 .menu-categories {
+  background-color: #f0f0f4;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 53px;
 }
 .menu-categories__item {
+    position: relative;
 }
 .menu-categories__link {
+    transition: all .3s ease-in-out;
+    padding: 15px 0 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.menu-categories__link::before{
+    content: '';
+    position: absolute;
+    width: 0;
+    left: auto;
+    bottom: -2px;
+    right: 0;
+    background-color: var(--accent-color);
+    height: 3px;
+    transition: all .3s;
+}
+.menu-categories__link:hover {
+    color: #000;
+}
+.menu-categories__link:hover::before {
+    width: 100%;
+    right: auto;
+    left: 0;
 }
