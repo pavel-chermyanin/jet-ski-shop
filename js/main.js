@@ -58,14 +58,23 @@ $(function () {
 
     // ==== filter-btns ====
 
-    $('.catalog__filter-btngrid').on('click', function() {
+    $('.catalog__filter-btngrid').on('click', function () {
         $(this).addClass('catalog__filter-button--active');
         $('.catalog__filter-btnline').removeClass('catalog__filter-button--active');
         $('.product-item__wrapper').removeClass('product-item__wrapper--list')
     })
-    $('.catalog__filter-btnline').on('click', function() {
+    $('.catalog__filter-btnline').on('click', function () {
         $(this).addClass('catalog__filter-button--active');
         $('.catalog__filter-btngrid').removeClass('catalog__filter-button--active');
         $('.product-item__wrapper').addClass('product-item__wrapper--list')
     })
+
+
+    // ==== rateYo ====
+
+    $(".rate-yo").rateYo({
+        ratedFill: "#1c62cd",
+        normalFill: "#c4c4c4",
+        spacing: "7px",
+    });
 });
