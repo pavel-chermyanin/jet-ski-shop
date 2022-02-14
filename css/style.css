@@ -34,6 +34,8 @@ body {
   font-size: 20px;
   line-height: 24px;
   font-weight: 400;
+  overflow-x: hidden;
+  min-width: 320px;
 }
 .container {
   max-width: 1200px;
@@ -54,6 +56,9 @@ body {
   min-height: 122px;
   font-family: "SFProDisplay-Bold", sans-serif;
   font-weight: 700;
+}
+.menu__btn {
+  display: none;
 }
 .menu__item {
   display: inline-block;
@@ -142,6 +147,34 @@ body {
   width: 100%;
   right: auto;
   left: 0;
+}
+.menu-mobile__list {
+  width: 243px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  transform: translateX(-100%);
+  transition: all .4s ease-in-out;
+  position: absolute;
+  z-index: 10;
+}
+.menu__mobile-linewrapper{
+  display: none;
+}
+.menu-mobile__list--active{
+  transform: translateX(0);
+}
+.menu-mobile__item {
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.menu-mobile__link {
+  padding-left: 53px;
+  padding-top: 36px;
+}
+.menu-mobile__img{
+  position: absolute;
+  left: 11px;
+  bottom: 0;
 }
 
 /* ==== banner-section ==== */
@@ -1314,14 +1347,14 @@ li.slick-active button {
   border-radius: 5px;
   cursor: pointer;
 }
-.product-card__buttons a + a{
+.product-card__buttons a + a {
   margin-left: 30px;
 }
-.card__tabs{
+.card__tabs {
   margin-bottom: 100px;
 }
 .card__tab-box {
-  background-color: #F0F0F4;
+  background-color: #f0f0f4;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -1331,7 +1364,7 @@ li.slick-active button {
 .card__tab {
   font-size: 20px;
   line-height: 24px;
-  color: #2F3035;
+  color: #2f3035;
   opacity: 0.6;
 }
 .card__tab.tab--active {
@@ -1344,20 +1377,29 @@ li.slick-active button {
 }
 .card__label-search {
   font-size: 17px;
-  color: rgba(47, 48, 53, .7);
+  color: rgba(47, 48, 53, 0.7);
 }
 .card__input-search {
-  background-color: #F0F0F4;
+  font-family: "SFProDisplay-Regular", sans-serif;
+  background-color: #f0f0f4;
   border: none;
   margin-left: 17px;
   border-radius: 3px;
   padding: 9px 37px 9px 17px;
   margin-right: 100px;
+  background-image: url(../images/search-icon.svg);
+  background-position: 95% center;
+  background-repeat: no-repeat;
+}
+.card__input-search::placeholder {
+  font-family: "SFProDisplay-Regular", sans-serif;
+  font-size: 17px;
+  color: rgba(47, 48, 53, 0.4);
 }
 .card__label-pickup {
   margin-left: 54px;
   font-size: 17px;
-  color: rgba(47, 48, 53, .7);
+  color: rgba(47, 48, 53, 0.7);
 }
 .card__list {
 }
@@ -1367,12 +1409,12 @@ li.slick-active button {
   display: flex;
   font-size: 16px;
   line-height: 24px;
-  color: rgba(47, 48, 53, .7);
+  color: rgba(47, 48, 53, 0.7);
 }
-.card__list-itemtitle{
+.card__list-itemtitle {
   font-size: 20px;
   line-height: 24px;
-  color: rgb(47, 48, 53,);
+  color: rgb(47, 48, 53);
 }
 .card__list-address {
   width: 220px;
@@ -1383,7 +1425,7 @@ li.slick-active button {
   width: 157px;
   margin-right: 96px;
 }
-.workhours{
+.workhours {
   display: flex;
   justify-content: space-between;
 }
@@ -1400,7 +1442,7 @@ li.slick-active button {
 .card__list-btn {
   margin-left: auto;
 }
-.card__list-btn button{
+.card__list-btn button {
   font-size: 13px;
   line-height: 18px;
   text-transform: uppercase;

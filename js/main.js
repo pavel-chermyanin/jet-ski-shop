@@ -77,4 +77,10 @@ $(function () {
         normalFill: "#c4c4c4",
         spacing: "7px",
     });
+
+    // ==== menu mobile ====
+
+    $('.menu__btn').on('click', function() {
+        $('.menu-mobile__list').toggleClass('menu-mobile__list--active')
+    })
 });

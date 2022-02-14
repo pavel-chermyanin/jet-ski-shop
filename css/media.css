@@ -1,0 +1,47 @@
+@media (max-width: 1100px) {
+  .menu__item + .menu__item {
+    padding-left: 20px;
+  }
+  .header__adress {
+    margin-right: 20px;
+  }
+}
+@media (max-width: 968px) {
+  .header__bootom {
+    display: none;
+  }
+  .menu__list {
+    display: none;
+  }
+  .menu__mobile-linewrapper {
+    display: block;
+    font-family: "SFProDisplay-Bold", sans-serif;
+    font-weight: 700;
+    color: #2f3035;
+    background-color: #f0f0f4;
+    padding: 14px 0 14px 15px;
+    overflow-x: auto;
+  }
+  .menu__mobile-line {
+    width: 450px;
+  }
+  .menu__btn {
+    display: block;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+  }
+  .menu__btn-line {
+    background-color: #2f3035;
+    height: 3px;
+    border-radius: 3px;
+    width: 34px;
+    margin: 8px 0;
+  }
+}
+@media (max-width: 640px) {
+  .header__adress {
+    display: none;
+  }
+}
