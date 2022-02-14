@@ -231,7 +231,7 @@ li.slick-active button {
 }
 .banner-section__slider-img {
   object-fit: cover;
-  min-height: 40px;
+  min-height: 400px;
 }
 .sale-item {
   text-align: center;
