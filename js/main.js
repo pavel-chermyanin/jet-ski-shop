@@ -22,9 +22,9 @@ $(function () {
 
     $('.tab').on('click', function (e) {
         e.preventDefault();
-
         $($(this).siblings()).removeClass('tab--active');
-        $($(this).parent().siblings().find('div')).removeClass('tabs-content--active');
+        $($(this).parent().parent().siblings().find('div')).removeClass('tabs-content--active');
+        console.log($($(this).parent().siblings().find('div')))
 
         $(this).addClass('tab--active');
         $($(this).attr('href')).addClass('tabs-content--active')
@@ -44,6 +44,40 @@ $(function () {
         slidesToScroll: 1,
         prevArrow: '<button class="product-slider__slider-btn product-slider__slider-btnprev"><img src="./images/arrow-black-left.svg" alt=""></button>',
         nextArrow: '<button class="product-slider__slider-btn product-slider__slider-btnnext"><img src="./images/arrow-black-right.svg" alt=""></button>',
+               responsive: [
+            {
+                breakpoint: 1301,
+                settings: {
+                    arrows: false,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 1201,
+                settings: {
+                    slidesToShow: 3,
+                    arrows: false,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 870,
+                settings: {
+                    slidesToShow: 2,
+                    arrows: false,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 601,
+                settings: {
+                    slidesToShow: 1,
+                    arrows: false,
+                    dots: true
+                }
+            },
+
+        ]
     })
 
     // ==== connencting form-styler ====
@@ -91,5 +125,12 @@ $(function () {
 
     $('.menu__btn').on('click', function() {
         $('.menu-mobile__list').toggleClass('menu-mobile__list--active')
+    })
+
+    // ==== footer drop-down ====
+
+    $('.footer__top-title').on('click', function() {
+        $(this).next().slideToggle('400');
+        $(this).toggleClass('active');
     })
 });
