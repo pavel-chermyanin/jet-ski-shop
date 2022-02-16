@@ -133,10 +133,22 @@ $(function () {
         if ($(window).width() > 600) {
             $('.footer-list:hidden').show()
         }
+        if ($(window).width() > 640) {
+            $('.aside-filter:hidden').show()
+        }
     })
 
     $('.footer__top-title').on('click', function() {
         $(this).next().slideToggle('400');
         $(this).toggleClass('active');
+    })
+
+
+
+
+
+    $('.aside__btn').on('click', function() {
+        console.log('!')
+        $(this).next().slideToggle('400');
     })
 });

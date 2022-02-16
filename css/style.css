@@ -711,7 +711,7 @@ li.slick-active button {
   line-height: 12px;
   margin: 0 40px;
 }
-.breadcrumbs {
+.breadcrumbs__inner {
   margin-bottom: 40px;
 }
 .breadcrumbs__list {
@@ -806,12 +806,15 @@ li.slick-active button {
 .catalog__filter-btnline:hover {
   opacity: 1;
 } */
+.aside__btn{
+  display: none;
+}
 .catalog__inner {
   display: flex;
 }
 .catalog__inner-aside {
   min-width: 290px;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 .catalog__inner-list {
   display: flex;
