@@ -129,6 +129,12 @@ $(function () {
 
     // ==== footer drop-down ====
 
+    $(window).resize(function() {
+        if ($(window).width() > 600) {
+            $('.footer-list:hidden').show()
+        }
+    })
+
     $('.footer__top-title').on('click', function() {
         $(this).next().slideToggle('400');
         $(this).toggleClass('active');
