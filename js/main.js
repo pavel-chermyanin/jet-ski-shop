@@ -24,10 +24,11 @@ $(function () {
         e.preventDefault();
         $($(this).siblings()).removeClass('tab--active');
         $($(this).parent().parent().siblings().find('div')).removeClass('tabs-content--active');
-        console.log($($(this).parent().siblings().find('div')))
 
         $(this).addClass('tab--active');
         $($(this).attr('href')).addClass('tabs-content--active')
+
+        $('.product-slider').slick('setPosition')
     })
 
     // ==== favorite ====
@@ -44,7 +45,7 @@ $(function () {
         slidesToScroll: 1,
         prevArrow: '<button class="product-slider__slider-btn product-slider__slider-btnprev"><img src="./images/arrow-black-left.svg" alt=""></button>',
         nextArrow: '<button class="product-slider__slider-btn product-slider__slider-btnnext"><img src="./images/arrow-black-right.svg" alt=""></button>',
-               responsive: [
+        responsive: [
             {
                 breakpoint: 1301,
                 settings: {
@@ -123,31 +124,39 @@ $(function () {
 
     // ==== menu mobile ====
 
-    $('.menu__btn').on('click', function() {
+    $('.menu__btn').on('click', function () {
         $('.menu-mobile__list').toggleClass('menu-mobile__list--active')
     })
 
     // ==== footer drop-down ====
 
-    $(window).resize(function() {
+    $(window).resize(function () {
         if ($(window).width() > 600) {
             $('.footer-list:hidden').show()
+            $('.footer__top-title').removeClass('active')
         }
         if ($(window).width() > 640) {
             $('.aside-filter:hidden').show()
         }
+        if ($(window).width() < 600) {
+            $('.footer-list').hide()
+            $('.footer-list-title').removeClass('active')
+
+        }
     })
 
-    $('.footer__top-title').on('click', function() {
-        $(this).next().slideToggle('400');
-        $(this).toggleClass('active');
+    $('.footer__top-title').on('click', function () {
+        if ($(window).width() < 601) {
+            $(this).next().slideToggle('400');
+            $(this).toggleClass('active');
+        }
     })
 
 
 
 
 
-    $('.aside__btn').on('click', function() {
+    $('.aside__btn').on('click', function () {
         console.log('!')
         $(this).next().slideToggle('400');
     })
